@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(59, 42, 42);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* Topbar */
+.topbar{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to top,rgba(54, 49, 49, 0.5)0,rgba(0,0,0,0.9)100%);
+}
+
+.part1{
+    margin: 0 0 0 5%;
+}
+
+.part1 > img{
+    height: 6vh;
+    cursor: pointer;
+}
+
+.part2 > img{
+    height: 12vh;
+    position: relative;
+}
+.part2{
+    display: flex;
+    width: auto;
+    margin-right: 10px;
+    justify-content: flex-end;
+}
+
+.links{
+    display: flex;
+    list-style: none;
+    margin-top: 50px;
+}
+
+.links > li > a{
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    margin: 0 10px;
+    font-size: 1vw;
+    transition: 500ms ease-in-out;
+}
+
+.links > li > a:hover{
+    border-bottom: 1px solid white;
+}
+
+
+/* Container */
+
+.container{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    background-image:url("https://s7ap1.scene7.com/is/image/tatamotors/nexon-dark-banner-march-2024?$BA-1920-925-S$&fit=crop&fmt=webp");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.content{
+    position: absolute;
+    top: 22vw;
+    left: 10vw;
+    color: white;
+    padding: 2vw;
+    background-image: linear-gradient(to top, rgba(0,0,0,0)0,rgba(0,0,0,0.9)100%);
+}
+
+.carName{
+    font-size: 4vw;
+    margin: 0;
+}
+.comment{
+    font-size: 2vw;
+    margin: 0 0 20px 0;
+}
+
+.content > a{
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: white;
+}
+
+.exterior, .interior1, .interior2{
+    width: 100%;
+    color: white;
+    margin-bottom: 2vw;
+}
+
+#box_exterior, #box_interior, #reverse{
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: #4b4040;
+}
+
+#box_exterior > img, #box_interior > img, #reverse > img{
+    width: 100%;
+    height: 100%;
+}
+
+.interior2{
+    display: none;
+}
+
+
+
+
+
+@media all and (max-width:1180px){
+
+    .links > li > a{
+        margin: 0 5px;
+    }
+    .container{
+        height: 60vh;
+    }
+    .content{
+        top: 35vh;
+    }
+}
+
+@media all and (max-width:976px){
+    .links{
+        display: none;
+    }
+    .container{
+        height: 35vh;
+    }
+    .content{
+        top: 25vh;
+    }
+}
+
+@media all and (max-width:520px){
+    #box_exterior, #box_interior, #reverse{
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+    
+    
+    #box_exterior > img, #box_interior > img, #reverse > img{
+        width: 100%;
+        height: auto;
+    }
+    .interior1{
+        display: none;
+    }
+
+    .interior2{
+        display: block;
+    }
+}
+
+@media all and (max-width:430px){
+    .part1 > img{
+        height: 4vh;
+    }
+    .part2 > img{
+        height: 8vh;
+    }
+    .container{
+        height: 20vh;
+    }
+    .content{
+        top: 18vh;
+    }
+    
+
+    
+    
+}
