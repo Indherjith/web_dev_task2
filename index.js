@@ -1,4 +1,4 @@
-
+// Exterior
 
 let images = [{"imgsrc":"https://s7ap1.scene7.com/is/image/tatamotors/colour-atlas-black?$TT-614-400-D$&fit=crop&fmt=webp","heading":"Atlas Black Color","content":"Bold, beautiful, gorgeous. <br> These are only some of the compliments your <br> #Dark’s Atlas Black colour will attract."},
 { "imgsrc":"https://s7ap1.scene7.com/is/image/tatamotors/alloy-wheel-1?$TT-614-400-D$&fit=crop&fmt=webp","heading":"R16 #Dark theme alloy wheels","content":"Style meets performance on these elegantly designed wheels that let the good times roll on."},
@@ -84,6 +84,9 @@ const prev = () => {
 }
 
 next();
+
+// Interior
+
 
 const interiorData = [
     {
@@ -269,3 +272,94 @@ const iprev2 = () => {
 }
 
 inext2();
+
+
+
+// features
+
+
+
+let fimages = [{"imgsrc":"https://s7ap1.scene7.com/is/image/tatamotors/floating-infotainment-system-by-harman?$TT-614-400-D$&fit=crop&fmt=webp","heading":"26.03cm Floating Infotainment System by Harman™","content":"A vibrant display that matches your personality and provides immersive entertainment."},
+{"imgsrc":"https://s7ap1.scene7.com/is/image/tatamotors/26.03-cm-digital-instrument-cluster?$TT-614-400-D$&fit=crop&fmt=webp","heading":"26.03cm Digital Instrument Cluster","content":"Comfort, class and convenience now at your fingertips on a display that leaves nothing to be desired."},
+{"imgsrc":"https://s7ap1.scene7.com/is/image/tatamotors/wireless-charger-colored?$TT-614-400-D$&fit=crop&fmt=webp","heading":"Wireless Charger","content":"Be ever ready to play by keeping your devices charged and ready to go. "},
+{"imgsrc":"https://s7ap1.scene7.com/is/image/tatamotors/navigation-display-on-instrument-cluster?$TT-614-400-D$&fit=crop&fmt=webp","heading":"Navigation Display on Instrument Cluster","content":"Navigate as effortlessly as you impress onlookers on every drive"},
+{"imgsrc":"https://s7ap1.scene7.com/is/image/tatamotors/jbl-branded-speaker-and-subwoofer?$TT-614-400-D$&fit=crop&fmt=webp","heading":"JBL-branded 9-speaker and Subwoofer","content":"Escape the world and immerse yourself in superior acoustics as you slay the day."}];
+var findex =-1;
+
+
+const fshowTimer = (fshow) =>{
+    let box = document.getElementById("box_features");
+    box.innerHTML = "";
+    box.style.transition = "all 1s ease-in-out";
+
+    let image = document.createElement("img");
+    image.src = fimages[findex].imgsrc;
+    let content = document.createElement("div");
+    content.style.padding = "3vh";
+    let head = document.createElement("h1"); 
+    head.className = "heads";
+    head.style.fontSize = "2vhw"; 
+
+    let para = document.createElement("p");
+    para.className = "para";
+    para.style.fontSize = "1.5vhw";
+
+    let btns = document.createElement("div");
+    let btn1 = document.createElement("button");
+    let btn2 = document.createElement("button");
+
+    btn1.innerText = "<< Previous";
+    btn2.innerText = "Next >>";
+
+    btn1.style.fontSize="2vhw";
+    btn1.style.background = "transparent";
+    btn1.style.border="none";
+    btn1.style.color = "white";
+    btn2.style.fontSize="2vhw";
+    btn2.style.background = "transparent";
+    btn2.style.border="none";
+    btn2.style.color = "white";
+    btn1.style.marginRight="1vhw"
+
+    let outoff = document.createElement("p");
+    outoff.style.fontSize = "1vhw";
+    outoff.style.display = "inline-block";
+    outoff.innerHTML = `${fshow} / 5 `;
+
+    btns.style.display = "flex";
+    btns.style.justifyContent = "space-evenly";
+    btns.style.marginBottom = "1vw"; 
+    btns.style.marginTop = "1vw"; 
+    btns.style.alignItems = "center";
+
+    btns.append(btn1, outoff ,btn2);
+    btn1.addEventListener("click",prevf);
+    btn2.addEventListener("click",nextf);
+
+
+   
+
+    head.innerHTML = fimages[findex].heading;
+    para.innerHTML = fimages[findex].content;
+    content.append(head,para,btns);
+    box.append(image,content);
+}
+
+const nextf = () => {
+    findex+=1;
+    if(findex == 5){
+        findex = 0
+    }   
+    fshowTimer(findex+1)
+}
+
+
+const prevf = () => {
+    findex-=1;
+    if(findex == -1){
+        findex = 4
+    }   
+    fshowTimer(index+1)
+}
+
+nextf();
