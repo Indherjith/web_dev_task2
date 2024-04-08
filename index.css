@@ -34,6 +34,7 @@ body{
     justify-content: flex-end;
 }
 
+
 .links{
     display: flex;
     list-style: none;
@@ -91,6 +92,20 @@ body{
     color: white;
 }
 
+.vid{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;;
+}
+
+.videos{
+    width: 60vw;
+    height: 35vw;
+    margin: auto;
+}
+
 .exterior, .interior1, .interior2, .features{
     width: 100%;
     color: white;
@@ -115,6 +130,12 @@ body{
     display: none;
 }
 
+footer{
+    font-size: 1vw;
+    color: teal;
+    padding:0 0 5px 10%;
+    background-color: #341b1b;
+}
 
 
 
